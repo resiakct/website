@@ -11,7 +11,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
       if (confirmPassword === password) {
         alert("Account created successfully!");
-      window.location.href = "login.html";
+      window.location.href = "index.html";
       } else {
         alert("Please enter the right password");
       }
