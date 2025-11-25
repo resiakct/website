@@ -1,18 +1,18 @@
 document.getElementById("signupForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+  event.preventDefault();
 
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
 
-      const user = { email, password };
+  if (confirmPassword !== password) {
+    alert("Incorrect password, try again!");
+    return;
+  }
 
-      localStorage.setItem("user", JSON.stringify(user));
+  const user = { email, password };
+  localStorage.setItem("user", JSON.stringify(user));
 
-      if (confirmPassword === password) {
-        alert("Account created successfully!");
-      window.location.href = "index.html";
-      } else {
-        alert("Please enter the right password");
-      }
-    });
+  alert("Account created successfully!");
+  window.location.href = "index.html"; 
+});
