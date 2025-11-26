@@ -53,3 +53,25 @@ body {
     font-size: 18px;
     margin: 5px;
 }
+
+.title-container {
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.scroll-title {
+    display: inline-block;
+    position: relative;
+    animation: scroll-left 8s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-130%);
+    }
+}
