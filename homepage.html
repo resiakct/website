@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home lage</title>
+  <link rel="stylesheet" href="sound.css"/>
+    
+  </style>
+  <title>Home page</title>
 </head>
+
 <body>
-  
-  <img src="images/myHome.jpg"/>
-  <img src="images/myHouse.jpg"/>
-  
+    
+    <img src="images/myHouse.jpg"/>
+  <div class="music-player">
+    <audio id="audio"></audio>
+
+    <div class="song-info">
+        <h3 id="song-title">Song Title</h3>
+        <span id="current-time">0:00</span> /
+        <span id="duration">0:00</span>
+    </div>
+
+    <!-- Equalizer animation -->
+    <div class="equalizer" id="equalizer">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <input type="range" id="progress" value="0" min="0" max="100">
+
+    <div class="controls">
+        <button id="prevBtn">⏮️</button>
+        <button id="playBtn">▶️</button>
+        <button id="pauseBtn">⏸️</button>
+        <button id="nextBtn">⏭️</button>
+    </div>
+</div>
+<script src="music.js"></script>
 </body>
+
 </html>
