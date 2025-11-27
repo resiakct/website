@@ -31,7 +31,7 @@ signupForm.addEventListener('submit', (e) => {
     .then((userCredential) => {
       alert('Sign Up Successful!');
       console.log(userCredential.user);
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     })
     .catch((error) => {
       alert(error.message);
