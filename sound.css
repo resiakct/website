@@ -1,8 +1,8 @@
 
 body {
-    background: url("images/spank.gif") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
+    background: url("images/iloveyou.gif") no-repeat center center fixed;
+    background-size: 100%;
+    color: black;
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
@@ -18,6 +18,7 @@ body {
 
 .song-info h3 {
     margin-bottom: 10px;
+    color: #000;
 }
 
 .title-container {
@@ -27,6 +28,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    color: black;
 }
 
 .scroll-title {
@@ -62,6 +64,7 @@ body {
     margin: 40px auto;
     width: 90%;
     max-width: 600px;
+    color: black;
 }
 
 .gallery-container img {
@@ -73,7 +76,7 @@ body {
 
 #gallery-message {
     color: #000;
-    font-size: 200px;
+    font-size: 20px;
     margin: 15px 0;
 }
 
