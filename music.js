@@ -6,7 +6,8 @@ const progress = document.getElementById("progress");
 const equalizer = document.getElementById("equalizer");
 
 const songs = [
-    "Alipin By Khel Pangilinan.mp3"
+    "Alipin By Khel Pangilinan.mp3",
+    "You'll Be Safe Here By Rico Blanco.mp3"
 ];
 
 

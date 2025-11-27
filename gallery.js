@@ -4,11 +4,7 @@ const pictures = [
     "images/tahanan.jpg"
 ];
 
-const messages = [
-    "I‘m sorry na my love",
-    ":((",
-    "sorryyyy"
-];
+const message = document.querySelectorAll("#sweetMessage p");
 
 let i = 0;
 
@@ -17,7 +13,7 @@ const msg = document.getElementById("gallery-message");
 
 function loadGallery() {
     img.src = pictures[i];
-    msg.textContent = messages[i];
+    msg.textContent = message[i].textContent;
 }
 
 loadGallery();
