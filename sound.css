@@ -3,38 +3,70 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
 }
 
 .music-player {
     background: #111;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    margin-top: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
 }
 
 .song-info h3 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.title-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.scroll-title {
+    display: inline-block;
+    animation: scroll-left 6s linear infinite; /* Adjusted speed */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-140%);
+    }
 }
 
 .controls button {
     font-size: 22px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: none;
     background: #1877F2;
     color: white;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    opacity: 0.85;
 }
 
 .gallery-container {
-    margin-top: 30px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 600px;
 }
 
 .gallery-container img {
-    width: 90%;
-    max-width: 350px;
+    width: 100%;
+    max-width: 420px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(255,0,0,0.4);
 }
@@ -46,32 +78,20 @@ body {
 
 .gallery-buttons button {
     background: #1877F2;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 10px;
     border: none;
     color: white;
     font-size: 18px;
     margin: 5px;
+    cursor: pointer;
 }
 
-.title-container {
-    width: 300px;
-    overflow: hidden;
-    position: relative;
-    white-space: nowrap;
+.gallery-buttons button:hover {
+    opacity: 0.85;
 }
 
-.scroll-title {
-    display: inline-block;
-    position: relative;
-    animation: scroll-left 8s linear infinite;
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-130%);
-    }
+#progress {
+    width: 80%;
+    margin: 15px 0;
 }
