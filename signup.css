@@ -3,9 +3,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("images/nature.jpg") no-repeat center center fixed;
+  background: url("images/tulip.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 input::placeholder {
@@ -18,8 +20,8 @@ input::placeholder {
   padding: 40px;
   background-color: white;
   font-size: 25px;
-  border-radius: 5%;
-  box-shadow: 0 10px 25px red;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -31,20 +33,17 @@ input::placeholder {
   text-transform: uppercase;
   font-size: 50px;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
   color: #333;
 }
 
-.create-email label,
-label.password,
-label.confirmPassword {
+label {
   font-size: 17px;
   font-weight: 600;
   text-transform: uppercase;
   color: #30C2A7;
-  margin-bottom: 5px;
-  display: block;
+  margin-left: 5px;
 }
 
 input {
@@ -72,18 +71,18 @@ button {
   border: 2px solid #6500FF;
   border-radius: 27px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 button:hover {
   transform: translateY(2px);
-  box-shadow: 0 3px 25px #FF0000;
+  box-shadow: 0 3px 25px rgba(255, 0, 0, 0.7);
 }
 
 @media (max-width: 500px) {
   #signupForm {
     padding: 25px;
-    max-width: 90%;
+    max-width: 95%;
     border-radius: 15px;
   }
   
@@ -92,7 +91,7 @@ button:hover {
   }
   
   input {
-    padding: 15px 10px;
+    padding: 15px 12px;
     font-size: 16px;
   }
   
