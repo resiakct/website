@@ -1,131 +1,103 @@
-body{
+body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background: url("images/nature.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 input::placeholder {
   color: #8A8D91;
 }
 
-#login-form{
+#signupForm {
   width: 100%;
-  max-width: 450px; 
+  max-width: 450px;
   padding: 40px;
   background-color: white;
   font-size: 25px;
   border-radius: 5%;
   box-shadow: 0 10px 25px red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
 }
 
-.form-heading{
+.signup {
   text-align: center;
   text-transform: uppercase;
   font-size: 50px;
   font-weight: 600;
   margin-bottom: 25px;
   letter-spacing: 1px;
+  color: #333;
 }
 
-.input-group{
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.input-group .label{
+.create-email label,
+label.password,
+label.confirmPassword {
   font-size: 17px;
   font-weight: 600;
   text-transform: uppercase;
-  position: absolute;
-  top: -20px;
-  left: 5px;
   color: #30C2A7;
+  margin-bottom: 5px;
+  display: block;
 }
 
-.input-group input{
-  width: 100%;           
-  max-width: 325px;      
-  padding: 20px 30px;
+input {
+  width: 100%;
+  padding: 20px 15px;
   font-size: 17px;
   background-color: white;
   border: 2px solid #CED0D4;
   border-radius: 15px;
   outline: none;
+  box-sizing: border-box;
 }
 
-.input-group input:focus{
+input:focus {
   border: 3px solid #1877F2;
 }
 
-.forgot-password{
-  text-align: right;
-  margin: 18px;
-  font-size: 19px;
-}
-
-.forgot-password a{
-  text-decoration: none;
-  color: blue;
-}
-
-.forgot-password a:hover{
-  color: blue;
-  opacity: 30%;
-}
-
-.submit {
+button {
   font-size: 25px;
   font-weight: 700;
-  width: 100%;      
-  max-width: 460px;  
+  width: 100%;
   padding: 15px;
   color: white;
   background-color: #1877F2;
   border: 2px solid #6500FF;
   border-radius: 27px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.submit:hover{
+button:hover {
   transform: translateY(2px);
   box-shadow: 0 3px 25px #FF0000;
 }
 
-.sign-up{
-  font-size: 20px;
-  text-align: center;
-  margin-top: 10px;
-}
-
 @media (max-width: 500px) {
-
-  #login-form{
+  #signupForm {
     padding: 25px;
     max-width: 90%;
     border-radius: 15px;
   }
-
-  .form-heading{
+  
+  .signup {
     font-size: 35px;
   }
-
-  .input-group input{
-    padding: 15px 20px;
+  
+  input {
+    padding: 15px 10px;
     font-size: 16px;
   }
-
-  .forgot-password{
-    font-size: 16px;
-    margin: 10px 0;
-  }
-
-  .submit{
+  
+  button {
     font-size: 20px;
     padding: 12px;
   }
-
-  .sign-up{
-    font-size: 17px;
-  }
-  }
+}
