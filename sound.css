@@ -1,5 +1,7 @@
+
 body {
-    background: black;
+    background: url("images/spank.gif") no-repeat center center fixed;
+    background-size: cover;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -54,8 +56,10 @@ body {
     cursor: pointer;
 }
 
-.controls button:hover {
-    opacity: 0.85;
+.controls button:active {
+    font-size: 16px;
+    padding: 9px 23px;
+    opacity: 0.85;;
 }
 
 .gallery-container {
@@ -87,11 +91,13 @@ body {
     cursor: pointer;
 }
 
-.gallery-buttons button:hover {
+.gallery-buttons button:active {
+    font-size: 16px;
+    padding: 9px 23px;
     opacity: 0.85;
 }
 
 #progress {
-    width: 80%;
+    width: 50%;
     margin: 15px 0;
 }
