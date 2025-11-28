@@ -74,7 +74,7 @@ body {
 }
 
 #gallery-message {
-    color: #000;
+    color: #0015FF;
     font-size: 20px;
     margin: 15px 0;
 }
@@ -99,6 +99,18 @@ body {
 #progress {
     width: 50%;
     margin: 15px 0;
+}
+
+
+#sweetMessage {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+    color: pink;
+    text-align: left;
 }
 
 
@@ -824,3 +836,20 @@ body {
     transform: translateY(180px);
   }
 }
+
+/* --- UNIVERSAL FIX: Always Center Buttons Horizontally --- */
+.div_btn {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Position adjustments */
+#btn-make {
+    bottom: 200px;
+}
+
+#div_support {
+    bottom: 80px;
+}
+

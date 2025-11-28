@@ -1,31 +1,164 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
-  <link rel="stylesheet" href="login.css" />
+    <meta charset="UTF-8">
+    <title>Magic Word</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 🔹 Moving Gradient Background */
+            background: linear-gradient(-45deg, #0d0d0f, #1a001f, #000033, #260033);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 🔹 Blur Glass Box */
+        .magic-box {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 20px;
+            width: 320px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 25px rgba(255, 0, 255, 0.4);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* 🔹 Input styling */
+        input {
+            width: 90%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 17px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        input::placeholder {
+            color: #cccccc;
+        }
+
+        /* 🔹 Button */
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff00d4, #7700ff);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.7);
+        }
+
+        /* 🔹 Error text */
+        .error {
+            margin-top: 12px;
+            color: #ff4d4d;
+            font-size: 16px;
+            display: none;
+        }
+
+        /* 🔹 Shake animation kapag mali */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            50% { transform: translateX(6px); }
+            75% { transform: translateX(-6px); }
+            100% { transform: translateX(0); }
+        }
+
+        .shake {
+            animation: shake 0.4s ease;
+        }
+    </style>
 </head>
+
 <body>
-  <form id="login-form">
-    <div class="form-heading">Log Into Facebook</div>
-    <div class="input-group">
-      <label class="label" for="email">Email</label>
-      <input required="" placeholder="Enter your email" name="email" id="email" type="email">
+
+    <div class="magic-box" id="box">
+        <h2>Enter Magic Word</h2>
+
+        <input type="type" id="magicInput" placeholder="Enter Magic Word..">
+        <button onclick="checkMagic()">Enter</button>
+
+        <p class="error" id="errorMsg">You don‘t know the magic word!!</p>
+        <p class="error" id="lockMsg" style="color:#ff0066;"></p>
     </div>
-    <div class="input-group">
-      <label class="label" for="password">Password</label>
-      <input required="" placeholder="Enter your password" type="password" name="password" id="password">
-    </div>
-    <div class="forgot-password">
-      <a href="#">Forgot Password?</a>
-    </div>
-    <button class="submit" type="submit">Log in</button>
-    <div class="sign-up">Don't Have Any Account?
-      <a href="signup.html">Sign up</a>
-    </div>
-  </form>
-  <script type="module" src="login.js">
-  </script>
+
+    <script>
+        /* 🔹 You can add unlimited magic words here */
+        const magicWords = [
+            "wshsheur",
+            "ILoveYouSinn",
+            "myHeartIsYours",
+            "pogiako",
+            "secretpass",
+            "helloWorld",
+            "h3artkey"
+        ];
+
+        let attempts = 3; // 🔹 Limit
+
+        function checkMagic() {
+            const input = document.getElementById("magicInput");
+            const box = document.getElementById("box");
+            const error = document.getElementById("errorMsg");
+            const lock = document.getElementById("lockMsg");
+
+            if (attempts <= 0) return;
+
+            if (magicWords.includes(input.value)) {
+                window.location.href = "homepage.html";
+                return;
+            }
+
+            // ❌ Wrong magic word
+            attempts--;
+            error.style.display = "block";
+            error.textContent = "Mali ang magic word mo!! (" + attempts + " tries left)";
+            input.value = ""; // auto-clear
+
+            // Shake animation
+            box.classList.add("shake");
+            setTimeout(() => box.classList.remove("shake"), 400);
+
+            // Lock if attempts = 0
+            if (attempts === 0) {
+                lock.style.display = "block";
+                lock.textContent = "Too many attempts. Locked.";
+            }
+        }
+    </script>
+
 </body>
 </html>
