@@ -11,22 +11,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            /* 🔹 Moving Gradient Background */
             background: linear-gradient(-45deg, #0d0d0f, #1a001f, #000033, #260033);
             background-size: 400% 400%;
             animation: gradientMove 12s ease infinite;
             font-family: "Poppins", sans-serif;
             color: white;
         }
-
+        
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* 🔹 Blur Glass Box */
         .magic-box {
             backdrop-filter: blur(12px);
             background: rgba(255, 255, 255, 0.05);
@@ -44,7 +41,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* 🔹 Input styling */
         input {
             width: 90%;
             padding: 12px;
@@ -61,7 +57,6 @@
             color: #cccccc;
         }
 
-        /* 🔹 Button */
         button {
             width: 100%;
             margin-top: 18px;
@@ -80,7 +75,6 @@
             box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.7);
         }
 
-        /* 🔹 Error text */
         .error {
             margin-top: 12px;
             color: #ff4d4d;
@@ -88,7 +82,6 @@
             display: none;
         }
 
-        /* 🔹 Shake animation kapag mali */
         @keyframes shake {
             0% { transform: translateX(0); }
             25% { transform: translateX(-6px); }
@@ -116,7 +109,6 @@
     </div>
 
     <script>
-        /* 🔹 You can add unlimited magic words here */
         const magicWords = [
             "wshsheur",
             "ILoveYouSinn",
@@ -127,7 +119,7 @@
             "h3artkey"
         ];
 
-        let attempts = 3; // 🔹 Limit
+        let attempts = 3;
 
         function checkMagic() {
             const input = document.getElementById("magicInput");
@@ -142,17 +134,12 @@
                 return;
             }
 
-            // ❌ Wrong magic word
             attempts--;
             error.style.display = "block";
             error.textContent = "Mali ang magic word mo!! (" + attempts + " tries left)";
-            input.value = ""; // auto-clear
-
-            // Shake animation
+            input.value = "";
             box.classList.add("shake");
             setTimeout(() => box.classList.remove("shake"), 400);
-
-            // Lock if attempts = 0
             if (attempts === 0) {
                 lock.style.display = "block";
                 lock.textContent = "Too many attempts. Locked.";
